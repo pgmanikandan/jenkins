@@ -2,7 +2,7 @@ resource "aws_instance" "jenkins_instance" {
   ami                    = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
-  vpc_security_group_ids = var.security_groups
+  #vpc_security_group_ids = var.security_groups
   count                  = var.instance_count
   #user_data              = file("./userdata.sh")
   tags = {
@@ -14,7 +14,7 @@ resource "aws_instance" "jenkins_instance_slave" {
   ami                    = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
-  vpc_security_group_ids = var.security_groups
+  #vpc_security_group_ids = var.security_groups
   count                  = var.instance_count
   #user_data              = file("./slavesetup.sh")
   tags = {
