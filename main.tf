@@ -4,7 +4,7 @@ resource "aws_instance" "jenkins_instance" {
   key_name               = var.key_name
   vpc_security_group_ids = var.security_groups
   count                  = var.instance_count
-  user_data              = file("./userdata.sh")
+  #user_data              = file("./userdata.sh")
   tags = {
     Name = var.instance_names[count.index]
   }
@@ -16,7 +16,7 @@ resource "aws_instance" "jenkins_instance_slave" {
   key_name               = var.key_name
   vpc_security_group_ids = var.security_groups
   count                  = var.instance_count
-  user_data              = file("./slavesetup.sh")
+  #user_data              = file("./slavesetup.sh")
   tags = {
     Name = var.slave_instance_names[count.index]
   }
